@@ -31,3 +31,15 @@ Esto permitió visualizar la totalidad del inventario, resolviendo exitosamente 
 | MITRE ARR&CK | T1190 | Exploit Public-Facing Application |
 | CWE | CWE-99 | Improver Neutralization of Special Elements used in an SQL Command |
 | NIST SP 800-53 | SI-10 | Información Input Validation |
+
+## 2. Metodología de Pruebas (PTES Modificado)
+1. **Análisis de Reconocimiento:** Identificación de parámetros en la URL (`?category=`) que interactúan con la base de datos.
+<br>
+
+2. **Análisis de Vulnerabilidades:** Prueba de caracteres especiales (`'`) para provocar errores o cambios en la respuesta del servidor.
+<br>
+
+3. **Explotación:** Inyección de lógica booleana para manipular el resultado de la consulta SQL.
+<br>
+
+4. **Post-Explotación:** Verificación de acceso a datos que antes estaban ocultos (`released = 0`).
