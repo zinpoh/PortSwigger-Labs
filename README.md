@@ -1,0 +1,21 @@
+# 🛡️ PortSwigger Academy: Path to Pentesting
+
+Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento mi progreso, metodologías y resolución de laboratorios de la **PortSwigger Academy**, utilizando herramientas de estándar industrial como **Burp Suite Professional**.
+
+> [!TIP]
+> Mi objetivo es dominar las vulnerabilidades del Top 10 de OWASP y entender la lógica de explotación desde una perspectiva de "Assume Breach".
+
+## 🚀 Laboratorios Completados
+
+| Categoría | Desafío | Dificultad | Documentación |
+| :--- | :--- | :--- | :--- |
+| **SQL Injection** | WHERE Clause (Hidden Data) | Aprendiz | [Ver Reporte](./SQL-Injection/WHERE-Clause-Hidden-Data/) |
+| **Authentication** | *Próximamente* | - | - |
+
+## 🛠️ Herramientas Utilizadas
+* **Proxy/Scanner:** Burp Suite Professional
+* **Análisis:** Browser DevTools, SQLmap (cuando aplique)
+* **Metodologías:** NIST SP 800-115, PTES, Mitre,
+
+---
+*Este repositorio se actualiza constantemente conforme avanza mi aprendizaje.*
