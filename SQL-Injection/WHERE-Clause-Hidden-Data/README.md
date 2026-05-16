@@ -71,7 +71,7 @@ Esto permitió visualizar la totalidad del inventario, resolviendo exitosamente 
 * **Peticion no alterada**
 ![comparación](img/normal.png)
 
-## 5. Recomendaciones de Mitigación (Remadiación)
+## 5. Recomendaciones de Mitigación (Remediación)
 Esvital cerrar el reporte con la solución técnica:
 * **Uso de Consultas Preparadas (Parametrized Queries)**: Evita la concatenacion directa de entradas de usuario en string SQL.
 * **Principio de Meno Privilegio**: Asegurar que el usaurio de la DB no tenga permisos excesivos.
