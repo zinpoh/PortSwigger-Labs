@@ -63,7 +63,7 @@ Esto permitió visualizar la totalidad del inventario, resolviendo exitosamente 
 "Al revisar en la pestaña 'Repeater' que el codigo de estado de repuesta equivale a 200, significa que es una entrada exitosa por lo que se modifica en el 'Capturador de paquetes' -> Proxy, y se manda finaalmente la peticion.
 ![modificacion_category](img/mod-category.png)
 
-**Paso D: Confirmación de Resultados*
+**Paso D: Confirmación de Resultados**
 "La aplicación ahora renderiza productos que no tienen el flag de 'Accessories'. El laboratorio se marca como resuelto."
 * **Inyección aplicada**
 ![resultado_final](img/final.png)
