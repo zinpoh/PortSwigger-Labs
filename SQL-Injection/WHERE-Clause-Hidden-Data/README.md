@@ -28,7 +28,7 @@ Esto permitió visualizar la totalidad del inventario, resolviendo exitosamente 
 ##  1. Marco de Referencia
 | Marco | Id | Categoria / Nombre |
 |-------|----|--------------------|
-| MITRE ARR&CK | T1190 | Exploit Public-Facing Application |
+| MITRE ATT&CK | T1190 | Exploit Public-Facing Application |
 | CWE | CWE-99 | Improver Neutralization of Special Elements used in an SQL Command |
 | NIST SP 800-53 | SI-10 | Información Input Validation |
 
