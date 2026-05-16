@@ -76,4 +76,23 @@ Esvital cerrar el reporte con la solución técnica:
 * **Uso de Consultas Preparadas (Parametrized Queries)**: Evita la concatenacion directa de entradas de usuario en string SQL.
 * **Principio de Meno Privilegio**: Asegurar que el usaurio de la DB no tenga permisos excesivos.
 
+---
+
+## ⚠️ Aviso de Responsabilidad y Ética (Disclaimer)
+
+> [!CAUTION]
+> **ADVERTENCIA DE SEGURIDAD:** El contenido de este repositorio tiene fines **estrictamente educativos y de investigación**. El uso de estas técnicas sin autorización es ilegal.
+
+Como profesional en formación en el área de la ciberseguridad, es mi responsabilidad subrayar los siguientes puntos:
+
+* **Entornos Controlados:** Todas las pruebas de concepto (PoC) documentadas aquí se han realizado en laboratorios autorizados (**PortSwigger Academy**) y entornos locales diseñados específicamente para este fin.
+* **Autorización Explícita:** Nunca se debe ejecutar ninguna técnica de inyección o escaneo sobre sistemas, redes o aplicaciones sin la **autorización previa, explícita y por escrito** de los propietarios de dichos activos.
+* **Marco Legal:** El uso no autorizado de estas técnicas en sistemas reales constituye un delito informático bajo las leyes internacionales y locales. El acceso no autorizado a sistemas de procesamiento de datos es punible por ley.
+
+---
+
+> [!IMPORTANT]
+> *"La seguridad es un proceso de construcción, no de destrucción. Mi objetivo es identificar vulnerabilidades para fortalecer las defensas y proteger la integridad de los datos de los usuarios."*
+
+---
   
