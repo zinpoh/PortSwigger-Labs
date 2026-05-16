@@ -69,7 +69,7 @@ Esto permitió visualizar la totalidad del inventario, resolviendo exitosamente 
 ![resultado_final](img/final.png)
 
 * **Peticion no alterada**
-![comparación](img/normal)
+![comparación](img/normal.png)
 
 ## 5. Recomendaciones de Mitigación (Remadiación)
 Esvital cerrar el reporte con la solución técnica:
