@@ -44,3 +44,8 @@ la consulta resultante ejecutada en el servidor se transforma en:
 ```SQL
 SELECT * FROM users WHERE username = 'administrator'--' AND password = '...'
 ```
+
+El operador `--` comenta el resto de la consulta en bases de datos como PostgreSQL, MSSQL o SQLite, anulando por completo la verificación de la contraseña.
+
+> **📸 CAPTURA_02:** Muestra la petición modificada en el Repeater de Burp Suite con el payload administrator'-- en el parámetro del usuario, junto con la respuesta HTTP 302 Found (Redirección) o 200 OK que demuestre una sesión iniciada exitosamente.
+Ejemplo de ubicación de imagen: ![Payload Explotación Burp](./img/02_payload_repeater.png)
