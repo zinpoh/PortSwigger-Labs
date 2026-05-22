@@ -48,4 +48,20 @@ SELECT * FROM users WHERE username = 'administrator'--' AND password = '...'
 El operador `--` comenta el resto de la consulta en bases de datos como PostgreSQL, MSSQL o SQLite, anulando por completo la verificación de la contraseña.
 
 > **📸 CAPTURA_02:** Muestra la petición modificada en el Repeater de Burp Suite con el payload administrator'-- en el parámetro del usuario, junto con la respuesta HTTP 302 Found (Redirección) o 200 OK que demuestre una sesión iniciada exitosamente.
-Ejemplo de ubicación de imagen: ![Payload Explotación Burp](./img/02_payload_repeater.png)
+![Payload Explotación Burp](./img/payload_repeater.png)
+
+### 3. Impacto Técnico y Post-Explotación
+Una vez confirmada la evasión en Burp Suite, se procede a aplicar el cambio en el navegador web para validar el acceso al panel administrativo.
+
+> **📸 CAPTURA_03:** Pantallazo del navegador donde se observe claramente el mensaje de éxito del laboratorio de PortSwigger ("Congratulations, you solved the lab!") y el banner del usuario logueado como administrator.
+![Laboratorio Resuelto](./img/lab_solved.png)
+
+## 🛡️ Recomendaciones de Mitigación (Enfoque de Defensa en Profundidad)
+1 **Consultas Parametrizadas (Prepared Statements):** Es la defensa principal. El uso de marcadores de posición garantiza que el motor de la base de datos trate la entrada del usuario estrictamente como datos, nunca como código ejecutable.
+  * Ejemplo conceptual en C# (.NET):
+    ```.NET
+    SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE username = @user AND password = @pass", conn);
+    cmd.Parameters.AddWithValue("@user", userInput);
+    ```
+2 **Principio de Menor Privilegio:** Asegurar que la cuenta de conexión a la base de datos utilizada por la aplicación web cuente únicamente con los permisos estrictamente necesarios (ej. restringir acceso a tablas del sistema).
+3 **Validación de Entradas (White-listing):** Implementar filtros estrictos para caracteres permitidos en los campos de login (ej. alfanuméricos), rechazando secuencias de control de bases de datos antes de que lleguen a la capa de persistencia.
