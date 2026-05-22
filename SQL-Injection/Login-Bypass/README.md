@@ -65,3 +65,25 @@ Una vez confirmada la evasión en Burp Suite, se procede a aplicar el cambio en 
     ```
 2. **Principio de Menor Privilegio:** Asegurar que la cuenta de conexión a la base de datos utilizada por la aplicación web cuente únicamente con los permisos estrictamente necesarios (ej. restringir acceso a tablas del sistema).
 3. **Validación de Entradas (White-listing):** Implementar filtros estrictos para caracteres permitidos en los campos de login (ej. alfanuméricos), rechazando secuencias de control de bases de datos antes de que lleguen a la capa de persistencia.
+
+---
+
+## ⚠️ Aviso de Responsabilidad y Ética (Disclaimer)
+
+> [!CAUTION]
+> **ADVERTENCIA DE SEGURIDAD:** El contenido de este repositorio tiene fines **estrictamente educativos y de investigación**. El uso de estas técnicas sin autorización es ilegal.
+
+Como profesional en formación en el área de la ciberseguridad, es mi responsabilidad subrayar los siguientes puntos:
+
+* **Entornos Controlados:** Todas las pruebas de concepto (PoC) documentadas aquí se han realizado en laboratorios autorizados (**PortSwigger Academy**) y entornos locales diseñados específicamente para este fin.
+* **Autorización Explícita:** Nunca se debe ejecutar ninguna técnica de inyección o escaneo sobre sistemas, redes o aplicaciones sin la **autorización previa, explícita y por escrito** de los propietarios de dichos activos.
+* **Marco Legal:** El uso no autorizado de estas técnicas en sistemas reales constituye un delito informático bajo las leyes internacionales y locales. El acceso no autorizado a sistemas de procesamiento de datos es punible por ley.
+
+---
+
+> [!IMPORTANT]
+> *"La seguridad es un proceso de construcción, no de destrucción. Mi objetivo es identificar vulnerabilidades para fortalecer las defensas y proteger la integridad de los datos de los usuarios."*
+
+---
+  
+
