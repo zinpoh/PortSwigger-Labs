@@ -2,11 +2,13 @@
 # SQL Injection: Vulnerability Allowing Login Bypass
 
 ## 📑 Clasificación de la Vulnerabilidad
-* **Categoría OWASP Top 10:** A03:2021-Injection / A07:2021-Identification and Authentication Failures
-* **CWE Asociados:** * [CWE-89](https://cwe.mitre.org/data/definitions/89.html): Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')
-  * [CWE-287](https://cwe.mitre.org/data/definitions/287.html): Improper Authentication
-* **Mapeo MITRE ATT&CK®:** * [T1190](https://attack.mitre.org): Exploit Public-Facing Application (Acceso Inicial)
-  * [T1556](https://attack.mitre.org): Modify Authentication Process (Evadir Mecanismos de Autenticación)
+| MARCO | Id | Categoria / Nombre |
+|-------|----|--------------------|
+| OWASP Top 10 | A03 / A07 |  Injection, Identification and Authentication Failures |
+| CWE | [CWE-89] [](https://cwe.mitre.org/data/definitions/89.html) | Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') |
+| | [CWE-287](https://cwe.mitre.org/data/definitions/287.html) | Improper Authentication |
+| MITRE ATT&CK® | [T1190](https://attack.mitre.org) | Exploit Public-Facing Application (Acceso Inicial) |
+| | [T1556](https://attack.mitre.org) | Modify Authentication Process (Evadir Mecanismos de Autenticación) |
 
 ---
 
