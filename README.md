@@ -10,6 +10,7 @@ Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento m
 | Categoría | Desafío | Dificultad | Documentación |
 | :--- | :--- | :--- | :--- |
 | **SQL Injection** | WHERE Clause (Hidden Data) | Aprendiz | [Ver Reporte](./SQL-Injection/WHERE-Clause-Hidden-Data/) |
+| **SQL Injection** | Vulnerability allowing login bypass | Aprendiz | [Ver Reporte](./SQL-Injection/Login-Bypass/) |
 | **Authentication** | *Próximamente* | - | - |
 
 ## 🛠️ Herramientas Utilizadas
