@@ -26,10 +26,14 @@ Iniciar sesión en la aplicación web como el usuario `administrator` explotando
 Identificamos el formulario de autenticación expuesto en la aplicación. Para analizar el comportamiento de las variables de entrada (`username` y `password`), interceptamos la petición de inicio de sesión.
 
 > **📸 CAPTURA_01:** Muestra la interfaz del formulario de inicio de sesión en el navegador y, en paralelo, la petición HTTP `POST /login` capturada en la pestaña **Proxy > HTTP history** (o en el **Repeater**) de Burp Suite, resaltando los parámetros enviados.
-> *Ejemplo de ubicación de imagen:* `![Formulario e Intercepción](./img/01_intercept_login.png)`
+[Formulario e Intercepción](./img/page_login.png)`
 
 ### 2. Prueba de Concepto (PoC) y Análisis de la Consulta Explotada
 Se presume que la lógica del backend ejecuta una consulta estructurada de la siguiente manera:
 
 ```sql
 SELECT * FROM users WHERE username = 'USER_INPUT' AND password = 'PASSWORD_INPUT'
+```
+Para romper la sintaxis original, inyectamos el carácter de comilla simple (`'`) en el parámetro `username`. Al observar la respuesta del servidor (un error interno de base de datos o un comportamiento anómalo), confirmamos la vulnerabilidad.
+
+Para forzar al motor de base de datos a evaluar la consulta como verdadera y truncar el resto de la validación (la contraseña), se diseña el siguiente payload para el campo `username`:
