@@ -37,3 +37,10 @@ SELECT * FROM users WHERE username = 'USER_INPUT' AND password = 'PASSWORD_INPUT
 Para romper la sintaxis original, inyectamos el carácter de comilla simple (`'`) en el parámetro `username`. Al observar la respuesta del servidor (un error interno de base de datos o un comportamiento anómalo), confirmamos la vulnerabilidad.
 
 Para forzar al motor de base de datos a evaluar la consulta como verdadera y truncar el resto de la validación (la contraseña), se diseña el siguiente payload para el campo `username`:
+```plaintext
+administrator'--
+```
+la consulta resultante ejecutada en el servidor se transforma en:
+```SQL
+SELECT * FROM users WHERE username = 'administrator'--' AND password = '...'
+```
