@@ -25,7 +25,7 @@ Iniciar sesión en la aplicación web como el usuario `administrator` explotando
 ### 1. Reconocimiento y Análisis del Vector de Ataque
 Identificamos el formulario de autenticación expuesto en la aplicación. Para analizar el comportamiento de las variables de entrada (`username` y `password`), interceptamos la petición de inicio de sesión.
 
-> **📸 CAPTURA_01:** Muestra la interfaz del formulario de inicio de sesión en el navegador y, en paralelo, la petición HTTP `POST /login` capturada en la pestaña **Proxy > HTTP history** (o en el **Repeater**) de Burp Suite, resaltando los parámetros enviados.
+> **📸 CAPTURA_01:** Muestra la interfaz del formulario de inicio de sesión en el navegador y, en paralelo, la petición HTTP `POST /login` capturada en la pestaña **Proxy > Repeater** de Burp Suite, resaltando los parámetros enviados.
 ![Formulario e Intercepción](img/page_login.png)`
 
 ### 2. Prueba de Concepto (PoC) y Análisis de la Consulta Explotada
