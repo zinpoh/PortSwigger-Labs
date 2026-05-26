@@ -38,7 +38,7 @@ Utilizamos la función global `@@version` para extraer la versión específica d
 
 2. Desactivación de Mensajes de Error Detallados: Configurar el servidor web para que no devuelva códigos de error detallados de la base de datos al cliente, limitando el reconocimiento (reconnaissance) por parte de un atacante.
 
-3. Firewall de Aplicaciones Web (WAF): Desplegar firmas de inspección profunda que bloqueen patrones comunes de ataques basados en funciones del sistema como @@version.
+3. Firewall de Aplicaciones Web (WAF): Desplegar firmas de inspección profunda que bloqueen patrones comunes de ataques basados en funciones del sistema como `@@version`.
 
 ## V. Aviso de Seguridad
 [!WARNING]**Aviso de Seguridad**: El contenido de este documento tiene fines exclusivamente educativos y de desarrollo profesional en pruebas de penetración autorizadas. La explotación de vulnerabilidades en entornos e infraestructura sin el consentimiento explícito y por escrito del propietario es ilegal y está penada por las leyes de ciberseguridad internacionales y locales. El autor no se hace responsable del mal uso de esta información.
