@@ -1,4 +1,4 @@
-<img width="1589" height="730" alt="image" src="https://github.com/user-attachments/assets/74a1086d-e67c-49ef-989f-63daea6bb4d5" /># SQL injection attack, querying the database type and version on Oracle
+# SQL injection attack, querying the database type and version on Oracle
 
 ## I. Descripción de la vulnerabilidad o ataque
 Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de categoría de productos. Al ser una base de datos **Oracle**, la consulta e interrogación del sistema para determinar la versión del software requiere una sintaxis específica. A diferencia de otros motores, Oracle exige que toda instrucción `SELECT` apunte a una tabla existente; para consultas genéricas o de variables de entorno, se debe invocar la tabla del sistema integrada llamada `DUAL`. El objetivo del atacante es realizar un ataque de tipo UNION para inyectar una consulta que extraiga la versión de la base de datos.
