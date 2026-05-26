@@ -1,4 +1,4 @@
-# SQL injection attack, querying the database type and version on Oracle
+<img width="1589" height="730" alt="image" src="https://github.com/user-attachments/assets/74a1086d-e67c-49ef-989f-63daea6bb4d5" /># SQL injection attack, querying the database type and version on Oracle
 
 ## I. Descripción de la vulnerabilidad o ataque
 Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de categoría de productos. Al ser una base de datos **Oracle**, la consulta e interrogación del sistema para determinar la versión del software requiere una sintaxis específica. A diferencia de otros motores, Oracle exige que toda instrucción `SELECT` apunte a una tabla existente; para consultas genéricas o de variables de entorno, se debe invocar la tabla del sistema integrada llamada `DUAL`. El objetivo del atacante es realizar un ataque de tipo UNION para inyectar una consulta que extraiga la versión de la base de datos.
@@ -15,22 +15,31 @@ Este laboratorio contiene una vulnerabilidad de inyección SQL en el filtro de c
 
 ## III. Detección y Explotación Paso a Paso
 
-### Paso 1: Determinación del número de columnas
-Antes de realizar un ataque `UNION`, se debe identificar cuántas columnas devuelve la consulta original utilizando variaciones de `ORDER BY`.
-```sql
-' ORDER BY 1--
-' ORDER BY 2--
-```
-> Foto Burp Suite Repeater
+### Paso 1: Interceptación del tráfico y envío al Repeater
+1. Abre el navegador integrado de Burp Suite y accede al laboratorio.
+2. Haz clic en cualquiera de los filtros de categoría de productos (por ejemplo, *Pets* o *Gifts*).
+3. Ve a la pestaña **Proxy > HTTP history** en Burp Suite, localiza la petición `GET /filter?category=...` y presiona `Ctrl + R` (o clic derecho y **Send to Repeater**).
+4. Dirígete a la pestaña **Repeater** para comenzar las pruebas controladas.
+> ![foto_repeater](img/repeater.png)
 
-### Paso 2: Validación de tipos de datos compatibles
-Debido a las restricciones de Oracle, validamos si las columnas aceptan datos de tipo cadena (String) utilizando la tabla DUAL.
-```sql
-' UNION SELECT 'abc', 'def' FROM dual--
-```
+---
 
-### Paso 3: Extracción de la versión de la base de datos (Payload Final)
-En Oracle, la versión se puede consultar en la tabla v$version. Formateamos el payload final:
+### Paso 2: Determinación del número de columnas con ORDER BY
+Para que un ataque `UNION` funcione, nuestro payload debe devolver exactamente el mismo número de columnas que la consulta original. En Oracle, probamos secuencialmente incrementando el índice:
+
+1. En el parámetro `category=`, añade al final `' ORDER BY 1--` y haz clic en **Send**.
+2. Modifica el parámetro a `' ORDER BY 2--` y vuelve a enviar.
+3. Continúa incrementando (`' ORDER BY 3--`) hasta que la aplicación web devuelva un error (normalmente un `HTTP 500 Internal Server Error`). Si con el número 3 da error, significa que la consulta original devuelve exactamente **2 columnas**.
+
+> **Respuesta Exitosa**
+> ![exito](img/exito.png)
+
+>**Respuesta de fallo**
+>![Fail](img/fail.png)
+
+### Paso 3: Confimación de columnas que aceptan texto (String)
+Oracle es estremadamente estricto con los tipos de datos y **exige** que uses la tabla del sistem 
+DUAL:
 ```sql
 ' UNION SELECT banner, NULL FROM v$version--
 ```
