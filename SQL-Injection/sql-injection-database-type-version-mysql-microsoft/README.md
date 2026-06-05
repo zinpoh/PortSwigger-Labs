@@ -29,9 +29,9 @@ El filtro de categoría de la aplicación es vulnerable a inyección SQL. En est
 Para poder estructurar una inyección basada en `UNION`, el query inyectado debe retornar obligatoriamente el mismo número de campos que la consulta legítima. 
 
 1. En el parámetro `category=`, inyecta secuencialmente índices numéricos cerrando la consulta con un comentario. Como estamos en un entorno web que interactúa con **MySQL/MSSQL**, utilizaremos la almohadilla (`#`).
-2. Envía el payload: `' ORDER BY 1%23` (Debería responder con un código HTTP `200 OK`).
-3. Modifica e incrementa el payload a: `' ORDER BY 2%23` (Mantiene el código HTTP `200 OK`).
-4. Incrementa una vez más a: `' ORDER BY 3%23`. En este punto, la aplicación web fallará devolviendo un error HTTP `500 Internal Server Error`. 
+2. Envía el payload: `' ORDER BY 1#` (Debería responder con un código HTTP `200 OK`).
+3. Modifica e incrementa el payload a: `' ORDER BY 2#` (Mantiene el código HTTP `200 OK`).
+4. Incrementa una vez más a: `' ORDER BY 3#`. En este punto, la aplicación web fallará devolviendo un error HTTP `500 Internal Server Error`. 
 
 Al fallar en la tercera columna, determinamos con certeza que la consulta original maneja exactamente **2 columnas**.
 
