@@ -12,6 +12,7 @@ Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento m
 | **SQL Injection** | WHERE Clause (Hidden Data) | Aprendiz | [Ver Reporte](./SQL-Injection/WHERE-Clause-Hidden-Data/) |
 | **SQL Injection** | Vulnerability allowing login bypass | Aprendiz | [Ver Reporte](./SQL-Injection/Login-Bypass/) |
 | **SQL Injection** | SQL injection attack, querying the database type and version on Oracle | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-oracle/) |
+| **SQL Injection** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-mysql-microsoft)
 | **Authentication** | *Próximamente* | - | - |
 
 ## 🛠️ Herramientas Utilizadas
