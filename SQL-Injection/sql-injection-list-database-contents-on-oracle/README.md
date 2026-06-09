@@ -1,8 +1,10 @@
 
-# SQL injection attack, listing the database contents on non-Oracle databases
+# SQL injection attack, listing the database contents on Oracle
 
 ## I. Descripción de la vulnerabilidad o ataque
-Este laboratorio presenta un escenario avanzado de explotación de inyección SQL de tipo UNION. Una vez que se detecta que el backend utiliza una base de datos estándar (no Oracle, por ejemplo PostgreSQL), el objetivo del atacante cambia de la simple identificación del entorno hacia la **exfiltración de datos**. El proceso requiere interrogar las tablas del esquema de información (`information_schema`) para mapear la estructura interna del almacenamiento: nombres de tablas, columnas críticas (como usuarios y contraseñas) y, finalmente, extraer las credenciales del usuario administrador para comprometer el control de acceso.
+Este laboratorio presenta un escenario avanzado de explotación de inyección SQL de tipo UNION en un entorno empresarial con un backend que utiliza un motor de base de datos Oracle. Una vez determinada la compatibilidad de columnas, el objetivo estratégico del atacante cambia de la simple identificación del entorno hacia la exfiltración de datos.
+
+El proceso técnico requiere interrogar el diccionario de datos exclusivo de Oracle a través de las vistas del sistema (`all_tables` y `all_tab_columns`) para mapear la estructura interna del almacenamiento: descubrir nombres de tablas generadas dinámicamente, identificar las columnas críticas que contienen nombres de usuario y contraseñas y, finalmente, extraer las credenciales del usuario administrador en texto plano para comprometer el control de acceso de la aplicación.
 
 ## II. Tabla de Códigos de Referencia (NIST, MITRE, CWE)
 
@@ -14,6 +16,7 @@ Este laboratorio presenta un escenario avanzado de explotación de inyección SQ
 | **MITRE ATT&CK** | T1078 | Valid Accounts (Lateral Movement / Persistence) |
 | **NIST SP 800-53** | IA-2 | Identification and Authentication (Organizational Users) |
 | **OWASP Top 10** | A03:2021-Injection | Categoría principal de vulnerabilidades de inyección |
+| **SANS IR** | Erradicacion y Contencion | Fase aplicable del SANS Incident Handlers Handbook para la revocación inmediata de credenciales comprometidas y el parcheo de la consulta vulnerable |
 
 ## III. Detección y Explotación Paso a Paso
 
