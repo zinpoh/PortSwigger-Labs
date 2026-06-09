@@ -91,6 +91,9 @@ Conociendo con exactitud el nombre de la tabla objetivo (`users_sjryzr`) y sus c
   * Password: `lt6tj31o0l5tr0hluwmq`
 3. Presiona **Log in**. Al iniciar sesión con los privilegios máximos del backend, el entorno de PortSwiggert validará la resolucion exitosa del desafío.
 
+> **Ingreso de Credenciales**
+> ![Credenciales-login](img/ingreso_lab_completed.png)
+
 ## IV. Mitigación
 1. **Uso Exclusivo de Consultas Parametrizadas:** La medida definitiva contra este ataque es asegurar que el backend use parámetros (`SqlCommand` con parámetros en .NET, `PreparedStatement` en Java/PHP) en lugar de concatenar dinámicamente strings en las sentencias SQL. Esto neutraliza por completo la capacidad del atacante de inyectar operadores lógicos o cláusulas como `UNION`.
 
