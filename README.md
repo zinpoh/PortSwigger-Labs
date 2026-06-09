@@ -13,6 +13,7 @@ Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento m
 | **SQL Injection** | Vulnerability allowing login bypass | Aprendiz | [Ver Reporte](./SQL-Injection/Login-Bypass/) |
 | **SQL Injection** | SQL injection attack, querying the database type and version on Oracle | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-oracle/) |
 | **SQL Injection** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-mysql-microsoft)
+| **SQL Injection** | SQL injection attack, listing the database contents on non-Oracle databases | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-non-oracle)
 | **Authentication** | *Próximamente* | - | - |
 
 ## 🛠️ Herramientas Utilizadas
