@@ -65,11 +65,11 @@ Una vez que conocemos el nombre exacto de la tabla crítica (asumamos para este 
 
 **Identificacion del nombre de las columnas necesarias en el Response**
 > **Columna: Username**
-> ![Response_Columns](img/03-1_column_username)
+> ![Response_Columns](img/03-1_column_username.png)
 * **Columna username: `username_zaxcyz`**
 
 > **Columna: Password**
-> ![Response_Columns](img/03-2_column_password)
+> ![Response_Columns](img/03-2_column_password.png)
 * **Columna password: `password_qfgwgo`**
 
 ### Paso 5: Exfiltración de credenciales (Payload Final)
