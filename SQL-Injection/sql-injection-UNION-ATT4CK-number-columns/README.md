@@ -77,7 +77,7 @@ Cuando la cantidad de NULL coincide con el query original del backend, la págin
 3. Presiona Enter. Al procesarse la inyección en la consulta del servidor web, el laboratorio detectará que has determinado la cantidad de columnas de manera precisa y el banner superior cambiará a verde indicando que el desafío ha sido solucionado.
 
 > **Lab Solucionado**
-> 1[Lab-solucionado](img/solucionado.png)
+> ![Lab-solucionado](img/solucionado.png)
 
 IV. Mitigación
 1. **Implementación de Consultas Parametrizadas (Prepared Statements):** Forzar el uso de consultas preparadas en el desarrollo del backend. Al usar parámetros del tipo `SELECT * FROM products WHERE category = ?`, el motor de la base de datos tratará cualquier entrada del usuario estrictamente como datos literales, haciendo que comandos como `UNION` u `ORDER BY` se vuelvan completamente inofensivos.
