@@ -12,9 +12,10 @@ Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento m
 | **SQL Injection** | WHERE Clause (Hidden Data) | Aprendiz | [Ver Reporte](./SQL-Injection/WHERE-Clause-Hidden-Data/) |
 | **SQL Injection** | Vulnerability allowing login bypass | Aprendiz | [Ver Reporte](./SQL-Injection/Login-Bypass/) |
 | **SQL Injection** | SQL injection attack, querying the database type and version on Oracle | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-oracle/) |
-| **SQL Injection** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-mysql-microsoft)
-| **SQL Injection** | SQL injection attack, listing the database contents on non-Oracle databases | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-non-oracle)
-| **SQL Injection** | SQL injection attack, listing the database contents on Oracle | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-on-oracle)
+| **SQL Injection** | SQL injection attack, querying the database type and version on MySQL and Microsoft | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-database-type-version-mysql-microsoft) |
+| **SQL Injection** | SQL injection attack, listing the database contents on non-Oracle databases | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-non-oracle) |
+| **SQL Injection** | SQL injection attack, listing the database contents on Oracle | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-on-oracle) |
+| **SQL Injection** | SQL injection UNION attack, determining the number of columns returned by the query | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-UNION-ATT4CK-number-columns) |
 | **Authentication** | *Próximamente* | - | - |
 
 ## 🛠️ Herramientas Utilizadas
