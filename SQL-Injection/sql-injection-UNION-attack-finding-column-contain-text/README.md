@@ -79,6 +79,7 @@ Si la consulta acepta el número 3 de forma exitosa pero genera un error HTTP 50
 '+UNION+SELECT+NULL,+'abc',+NULL--
 ```
 > * **Identificacion de la columna que contiene texto**
+
 > **Columna incorrecta**
 > ![Columna Incorrecta](img/ColumIncorrecta.png)
 
@@ -100,6 +101,25 @@ Si la consulta acepta el número 3 de forma exitosa pero genera un error HTTP 50
 1. Una vez que observamos que el payload fue cargado con exito para efectos del laboratorio.
 2. cargamos el payload directamente en la pagina web, y completamos en su totalidad el laboratorio.
 
-> **Laboratorio URL Completado*
+> **Laboratorio URL Completado**
 > ![visto bueno](img/labResuelto.png)
 
+## IV. Mitigación
+1. **Implementación de Consultas Parametrizadas (Prepared Statements):** Forzar el uso de consultas preparadas en el desarrollo del backend. Al usar parámetros del tipo `SELECT * FROM products WHERE category = ?`, el motor de la base de datos tratará cualquier entrada del usuario estrictamente como datos literales, haciendo que comandos como `UNION` u `ORDER BY` se vuelvan completamente inofensivos.
+2. **Sanitización y Validación del Parámetro de Entrada:** Implementar controles basados en listas blancas (whitelisting) para el parámetro `category`. Si las categorías son estáticas (por ejemplo: Gifts, Food, Clothes), el backend debe rechazar automáticamente cualquier petición que contenga caracteres de control ajenos a esa lista definida.
+3. **Minimización de Detalles en Errores de Aplicación:** Configurar el servidor para manejar excepciones de forma genérica. El ocultar los mensajes de error internos o comportamientos específicos (como pasar de un 200 a un 500 de forma tan evidente) dificulta enormemente la fase de reconocimiento y enumeración a ciegas por parte de un atacante.
+
+---
+
+## ⚠️ Aviso de Responsabilidad y Ética (Disclaimer)
+
+> [!CAUTION]
+> **ADVERTENCIA DE SEGURIDAD:** El contenido de este repositorio tiene fines **estrictamente educativos y de investigación**. El uso de estas técnicas sin autorización es ilegal.
+
+Como profesional en formación en el área de la ciberseguridad, es mi responsabilidad subrayar los siguientes puntos:
+
+* **Entornos Controlados:** Todas las pruebas de concepto (PoC) documentadas aquí se han realizado en laboratorios autorizados (**PortSwigger Academy**) y entornos locales diseñados específicamente para este fin.
+* **Autorización Explícita:** Nunca se debe ejecutar ninguna técnica de inyección o escaneo sobre sistemas, redes o aplicaciones sin la **autorización previa, explícita y por escrito** de los propietarios de dichos activos.
+* **Marco Legal:** El uso no autorizado de estas técnicas en sistemas reales constituye un delito informático bajo las leyes internacionales y locales. El acceso no autorizado a sistemas de procesamiento de datos es punible por ley.
+
+---
