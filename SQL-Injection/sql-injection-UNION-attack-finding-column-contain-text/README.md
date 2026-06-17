@@ -123,3 +123,8 @@ Como profesional en formación en el área de la ciberseguridad, es mi responsab
 * **Marco Legal:** El uso no autorizado de estas técnicas en sistemas reales constituye un delito informático bajo las leyes internacionales y locales. El acceso no autorizado a sistemas de procesamiento de datos es punible por ley.
 
 ---
+
+> [!IMPORTANT]
+> *"La seguridad es un proceso de construcción, no de destrucción. Mi objetivo es identificar vulnerabilidades para fortalecer las defensas y proteger la integridad de los datos de los usuarios."*
+
+---
