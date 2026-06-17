@@ -28,11 +28,11 @@ Para explotar con éxito esta vulnerabilidad y extraer información confidencial
 3. Ve a Proxy > HTTP history, localiza la solicitud correspondiente (GET /filter?category=...) y envíala al módulo Repeater usando el atajo Ctrl + R.
 4. Muévete a la pestaña del Repeater para iniciar las pruebas de inyección sobre el parámetro de la categoría.
 > **Vista del paaquete capturado en el Repeate de BurpSuite**
-> ![Repeater](img(01_packet_repeater.png)
+> ![Repeater](img/01_packet_repeater.png)
 
 ### Paso 2: Identificacion de la cadena de Texto
 Dentro de este laboratorio, y para lograr resolverlo, nos entrengan una cadena de texto en el principio, si uno se dirije a la pagina web del laboratorio bajo la barrade navegacion acotecera un mensaje que dice lo siguiente:
-"nfDs32" --> dependera exclusivamente del laboratorio la aleatoriedad de la cadena de texto.
+**"hhzlyd" --> dependera exclusivamente del laboratorio la aleatoriedad de la cadena de texto.**
 Esta cadena de texto nos permitira (una vez que poseamos en que columna se podria ubicar), resover el laboratorio.
 > **Vista para el caso practico de este laboratorio**
 > ![cadena](img/cadena.png)
@@ -53,10 +53,10 @@ La forma más eficiente de auditar el número de columnas es utilizar la cláusu
 Si la consulta acepta el número 3 de forma exitosa pero genera un error HTTP 500 al enviar el número 4, significa que la consulta original devuelve exactamente 3 columnas.
 
 > **Respuesta Incorrecta**
-> ![]()
+> ![Respuesta Incorrecta](img/incorrecta.png)
 
 > **Respuesta Correcta**
-> ![]()
+> ![Respuesta Correcta](img/correcta.png)
 
 * **Por lo tanto la aplicacion web posee como maximo 3 columnas**
 
@@ -65,6 +65,9 @@ Si la consulta acepta el número 3 de forma exitosa pero genera un error HTTP 50
 ```SQL
 '+UNION+SELECT+NULL,+NULL,+NULL--
 ```
+> **Formateado demanera que capture el header de nuetra peticion de manera correcta**
+> ![Formateo](img/formateo.png)
+
 2. Como resultado deberia responder con codigo `200 OK`.
 3. Luego en la primera sentencia `NULL`, lo reemplzamos por una cadena de caracteres aleatoreos y probamos nuevamente, tal sentencia deberia verse de la siguiente manera:
 ```SQL
@@ -75,4 +78,28 @@ Si la consulta acepta el número 3 de forma exitosa pero genera un error HTTP 50
 ```SQL
 '+UNION+SELECT+NULL,+'abc',+NULL--
 ```
+> * **Identificacion de la columna que contiene texto**
+> **Columna incorrecta**
+> ![Columna Incorrecta](img/ColumIncorrecta.png)
+
+> **Columna correcta**
+> ![Columna Correcta](img/ColumCorrecta.png)
+
 ### Paso 5: 
+* Ahora como dije en un principio, necesitábamos una palabra para aprobar el laboratorio. 
+1. Esta cadena que nos proporciona el lab. se debe reemplazar en el lugar de la cadena (en este caso en `abc` que corresponderia a la segunda columna).
+2. Lo que resultaria en lo siguiente:
+```SQL
+'+UNION+SELECT+NULL,+'hhzlyd',+NULL--
+```
+
+> **Resultado de laboratorio completado con Exito**
+> ![Lab Resuelto](img/resuelto.png)
+
+### Paso 6: Aplicacion del payload
+1. Una vez que observamos que el payload fue cargado con exito para efectos del laboratorio.
+2. cargamos el payload directamente en la pagina web, y completamos en su totalidad el laboratorio.
+
+> **Laboratorio URL Completado*
+> ![visto bueno](img/labResuelto.png)
+
