@@ -16,6 +16,7 @@ Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento m
 | **SQL Injection** | SQL injection attack, listing the database contents on non-Oracle databases | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-non-oracle) |
 | **SQL Injection** | SQL injection attack, listing the database contents on Oracle | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-list-database-contents-on-oracle) |
 | **SQL Injection** | SQL injection UNION attack, determining the number of columns returned by the query | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-UNION-ATT4CK-number-columns) |
+| **SQL Injection** | SQL injection UNION attack, finding a comun containing text | Practicante | [Ver Reporte](./SQL-Injection/sql-injection-UNION-attack-finding-column-contain-text) |
 | **Authentication** | *Próximamente* | - | - |
 
 ## 🛠️ Herramientas Utilizadas
