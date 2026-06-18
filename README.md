@@ -22,7 +22,7 @@ Bienvenido a mi repositorio de entrenamiento en seguridad web. Aquí documento m
 ## 🛠️ Herramientas Utilizadas
 * **Proxy/Scanner:** Burp Suite Professional
 * **Análisis:** Browser DevTools, SQLmap (cuando aplique)
-* **Metodologías:** NIST SP 800-115, PTES, Mitre,
+* **Metodologías:** NIST SP 800-115, PTES, Mitre, Sans IR, 
 
 ---
 *Este repositorio se actualiza constantemente conforme avanza mi aprendizaje.*
