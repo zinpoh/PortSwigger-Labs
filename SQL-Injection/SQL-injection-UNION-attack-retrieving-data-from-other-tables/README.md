@@ -62,7 +62,6 @@ Si la consulta acepta el número 3 de forma exitosa pero genera un error HTTP 50
   >![Completado](img/completado.png)
 
 ## IV. Mitigación
-## IV. Mitigación
 
 1. **Implementación estricta de Consultas Parametrizadas (Prepared Statements):** Desvincular completamente la lógica del query SQL de los datos proporcionados por el usuario en el backend. Al parametrizar sentencias como `SELECT * FROM products WHERE category = ?`, el motor de base de datos compila la consulta de manera fija, tratando cualquier payload malicioso de tipo `UNION SELECT` como una cadena de texto literal inofensiva en lugar de código ejecutable.
 
